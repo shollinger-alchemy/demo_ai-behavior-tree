@@ -6,6 +6,10 @@ using UnityEngine.AI;
 using Alchemy.Core;
 using Alchemy.AI;
 
+/**
+*  A sample behaviour script for an AI Agent that uses the Behaviour Tree.  The Setup method contains the Behaviour tree definition - it is where the Tree is created, with all parameters and configurables defined.
+*  A full definition file would have all parameters driven from other places, but these values are defined in-line for brevity.
+*/
 public class BasicAggressive : MonoBehaviour
 {
     public GameObject player;
@@ -23,14 +27,12 @@ public class BasicAggressive : MonoBehaviour
 
     private List<Perceptor> perceptors;
     
-    // Start is called before the first frame update
     void Start()
     {
         perceptors = GetComponentsInChildren<Perceptor>().ToList();
         Setup();
     }
 
-    // Update is called once per frame
     void Update()
     {
         root.Evaluate(CreateContext());
@@ -43,7 +45,14 @@ public class BasicAggressive : MonoBehaviour
 
         return context;
     }
-
+    
+    /** General Agent Flow
+    * 
+    * [x] if [been in cover for x time], peek
+    *  if [peeking] and [see player], attack
+    * if [peeking] and [don't see player], move in
+    *  if [don't see player] for x time, patrol
+    */
     private BehaviorTreeNode Setup() {
         root = new BehaviorTreeEntryNode();
 
@@ -116,9 +125,6 @@ public class BasicAggressive : MonoBehaviour
         return root;
     }
 
-    //[x] if [been in cover for x time], peek
-    // if [peeking] and [see player], attack
-    // if [peeking] and [don't see player], move in
-    // if [don't see player] for x time, patrol
+    
 
 }
