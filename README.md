@@ -6,7 +6,7 @@ Behaviour Trees are a popular way to perform more complicated deicion-making for
 
 The general idea of a Behaviour Tree is that the root is evaluated, and a depth-first traversal of the tree is performed.  Each node visited returns a boolean - whether the previous node was 'successful'.  If it was successful, the traversal is stopped.  If it was not, then the traversal continues until there are no more nodes left.
 
-This flexible system allows for nodes to perform any action as long as a boolean is returned.  For example, Conditional Nodes will check if a condition is true or false (ie. game state), and Action Nodes will signal to a listener that an Action has been decided on.  Generally, Conditional Nodes preceed Action Nodes to create an if-then paradigm.  Nodes can also be nested to define complex and chained behaviours.
+This flexible system allows for nodes to perform any action as long as a boolean is returned.  For example, Conditional Nodes will check if a condition is true or false (ie. game state), Action Nodes will signal to a listener that an Action has been decided on, and Selector Nodes will only run one child that is selected from some arbitrary criteria.  Generally, Conditional Nodes preceed Action Nodes to create an if-then paradigm.  Nodes can also be nested to define complex and chained behaviours.
 
 There are serveral references to Perceptors, which can be found in the [AI Agent Perception](https://github.com/shollinger-alchemy/demo_ai-agent-perception) demo.
 
