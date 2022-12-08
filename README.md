@@ -2,7 +2,7 @@
 This repository is for demonstration purposes only, and is not suitable for production.  The code is not guaranteed to run in Unity as-is.
 
 ## Overview
-Behaviour Trees are a popular way to perform more complicated deicion-making for an AI Agent than a state machine.  The demo in this repository shows a custom implementation of a Behaviour Tree and an example of a configured Tree for a patrolling enemy.
+Behaviour Trees are a popular way to perform more complicated decision-making for an AI Agent than a state machine.  The demo in this repository shows a custom implementation of a Behaviour Tree and an example of a configured Tree for a patrolling enemy.
 
 The general idea of a Behaviour Tree is that the root is evaluated, and a depth-first traversal of the tree is performed.  Each node visited returns a boolean - whether the previous node was 'successful'.  If it was successful, the traversal is stopped.  If it was not, then the traversal continues until there are no more nodes left.
 
